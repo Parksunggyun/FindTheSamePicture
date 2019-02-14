@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".findTheSamePicture.FindTheSamePictureActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/pictureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:padding="8dp"
+            android:id="@+id/pictureViews"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            android:overScrollMode="never"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:visibility="gone"
+            android:text="start"
+            android:textStyle="bold"
+            android:textSize="96sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:id="@+id/startTxtView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pictureViews"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:text="1"
+            android:textStyle="bold"
+            android:textSize="96sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:id="@+id/count1TxtView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pictureViews"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:text="3"
+            android:textStyle="bold"
+            android:textSize="96sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:id="@+id/count3TxtView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pictureViews"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:text="2"
+            android:textStyle="bold"
+            android:textSize="96sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:id="@+id/count2TxtView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pictureViews"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/restartBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pictureViews"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:text="재시작"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
