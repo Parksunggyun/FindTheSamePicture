@@ -47,22 +47,22 @@ public class FindTheSamePictureActivity extends AppCompatActivity {
 
         selectedPos = new Vector<>();
         pictures = new Vector<>();
-        pictures.add(new Picture("1", "1"));
-        pictures.add(new Picture("1", "1"));
-        pictures.add(new Picture("2", "2"));
-        pictures.add(new Picture("2", "2"));
-        pictures.add(new Picture("3", "3"));
-        pictures.add(new Picture("3", "3"));
-        pictures.add(new Picture("4", "4"));
-        pictures.add(new Picture("4", "4"));
-        pictures.add(new Picture("5", "5"));
-        pictures.add(new Picture("5", "5"));
-        pictures.add(new Picture("6", "6"));
-        pictures.add(new Picture("6", "6"));
-        pictures.add(new Picture("7", "7"));
-        pictures.add(new Picture("7", "7"));
-        pictures.add(new Picture("8", "8"));
-        pictures.add(new Picture("8", "8"));
+        pictures.add(new Picture(R.drawable.img1, "1"));
+        pictures.add(new Picture(R.drawable.img1, "1"));
+        pictures.add(new Picture(R.drawable.img2, "2"));
+        pictures.add(new Picture(R.drawable.img2, "2"));
+        pictures.add(new Picture(R.drawable.img3, "3"));
+        pictures.add(new Picture(R.drawable.img3, "3"));
+        pictures.add(new Picture(R.drawable.img4, "4"));
+        pictures.add(new Picture(R.drawable.img4, "4"));
+        pictures.add(new Picture(R.drawable.img5, "5"));
+        pictures.add(new Picture(R.drawable.img5, "5"));
+        pictures.add(new Picture(R.drawable.img6, "6"));
+        pictures.add(new Picture(R.drawable.img6, "6"));
+        pictures.add(new Picture(R.drawable.img7, "7"));
+        pictures.add(new Picture(R.drawable.img7, "7"));
+        pictures.add(new Picture(R.drawable.img8, "8"));
+        pictures.add(new Picture(R.drawable.img8, "8"));
         Collections.shuffle(pictures);
         adapter.setUpPicture(pictures);
 
@@ -110,7 +110,7 @@ public class FindTheSamePictureActivity extends AppCompatActivity {
                                                 .setListener(new AnimatorListenerAdapter() {
                                                     @Override
                                                     public void onAnimationStart(Animator animation) {
-                                                        txtView.setBackgroundColor(Color.WHITE);
+                                                        adapter.setImage(pos, pictures.get(pos).getDisplay());
                                                     }
 
                                                     @Override
@@ -120,8 +120,8 @@ public class FindTheSamePictureActivity extends AppCompatActivity {
                                                             int pos1 = selectedPos.get(0);
                                                             int pos2 = selectedPos.get(1);
                                                             if(pos1 != pos2) {
-                                                                String display = pictures.get(pos1).getDisplay();
-                                                                String display2 = pictures.get(pos2).getDisplay();
+                                                                String display = pictures.get(pos1).getTag();
+                                                                String display2 = pictures.get(pos2).getTag();
                                                                 Log.e("display1", display);
                                                                 Log.e("display2", display2);
                                                                 if (display.equals(display2)) {

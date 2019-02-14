@@ -2,16 +2,16 @@ package al.tong.mon.findthesamepicture.findTheSamePicture;
 
 class Picture {
 
-    private String display;
+    private int display;
     private String tag;
     private int check = 0;
 
-    Picture(String display, String tag) {
+    Picture(int display, String tag) {
         this.display = display;
         this.tag = tag;
     }
 
-    String getDisplay() {
+    int getDisplay() {
         return display;
     }
 
@@ -23,7 +23,7 @@ class Picture {
         return check;
     }
 
-    void setDisplay(String display) {
+    void setDisplay(int display) {
         this.display = display;
     }
 

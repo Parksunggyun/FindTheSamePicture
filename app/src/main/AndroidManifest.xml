@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:fullBackupContent="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".findTheSamePicture.FindTheSamePictureActivity">
+        <activity android:name=".findTheSamePicture.FindTheSamePictureActivity"
+            android:screenOrientation="sensorLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

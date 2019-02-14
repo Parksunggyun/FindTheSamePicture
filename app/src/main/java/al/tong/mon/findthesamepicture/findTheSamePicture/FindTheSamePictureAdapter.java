@@ -51,9 +51,8 @@ public class FindTheSamePictureAdapter extends RecyclerView.Adapter<FindTheSameP
         }
 
         Picture picture = pictures.get(position);
-        String display = picture.getDisplay();
         int check = picture.getCheck();
-        binding.pictureTxtView.setText(display);
+        binding.pictureTxtView.setImageDrawable(ContextCompat.getDrawable(context, picture.getDisplay()));
         Log.e("check[" + position + "] = ", String.valueOf(check));
         if(check == 0 && startAnimate) {
             binding.pictureTxtView.animate()
@@ -62,8 +61,7 @@ public class FindTheSamePictureAdapter extends RecyclerView.Adapter<FindTheSameP
                     .setListener(new AnimatorListenerAdapter() {
                         @Override
                         public void onAnimationEnd(Animator animation) {
-                            binding.pictureTxtView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorAccent));
-                            binding.pictureTxtView.setTextColor(ContextCompat.getColor(context, R.color.colorAccent));
+                            binding.pictureTxtView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.white_bg));
                             binding.pictureTxtView.animate()
                                     .rotationYBy(90)
                                     .rotationY(180)
@@ -79,7 +77,6 @@ public class FindTheSamePictureAdapter extends RecyclerView.Adapter<FindTheSameP
                     })
                     .start();
         } else if (check == 2) {
-            binding.pictureTxtView.setTextColor(ContextCompat.getColor(context, R.color.colorAccent));
             binding.pictureTxtView.setBackgroundColor(Color.BLACK);
         } else {
 
@@ -89,6 +86,11 @@ public class FindTheSamePictureAdapter extends RecyclerView.Adapter<FindTheSameP
     @Override
     public int getItemCount() {
         return pictures.size();
+    }
+
+    void setImage(int pos, int image) {
+        pictures.get(pos).setDisplay(image);
+        notifyItemChanged(pos);
     }
 
     void setUpPicture(Vector<Picture> pictures) {
